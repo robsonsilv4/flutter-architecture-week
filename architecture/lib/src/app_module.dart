@@ -6,6 +6,8 @@ import 'app_controller.dart';
 import 'interfaces/http_client_service_interface.dart';
 import 'interfaces/local_storage_interface.dart';
 import 'pages/home/home_controller.dart';
+import 'pages/home/home_page.dart';
+import 'pages/login/login_page.dart';
 import 'repositories/api_advisor_repository.dart';
 import 'repositories/api_advisor_repository_interface.dart';
 import 'services/http_client_service.dart';
@@ -37,5 +39,8 @@ class AppModule extends MainModule {
   Widget get bootstrap => App();
 
   @override
-  List<ModularRouter> get routers => null;
+  List<ModularRouter> get routers => [
+        ModularRouter('/', child: (_, __) => LoginPage()),
+        ModularRouter('/home', child: (_, __) => HomePage()),
+      ];
 }

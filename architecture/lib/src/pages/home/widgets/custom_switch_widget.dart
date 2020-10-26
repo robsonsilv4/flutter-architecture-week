@@ -11,10 +11,14 @@ class CustomSwitchWidget extends StatefulWidget {
 class _CustomSwitchWidgetState extends State<CustomSwitchWidget> {
   @override
   Widget build(BuildContext context) {
-    return Switch(
-      value: Modular.get<AppController>().isDark,
-      onChanged: (value) {
-        Modular.get<AppController>().changeThemeViewModel.changeTheme(value);
+    return ValueListenableBuilder(
+      valueListenable: Modular.get<AppController>().themeSwitch,
+      builder: (context, value, child) {
+        return Switch(
+          value: Modular.get<AppController>().isDark,
+          onChanged:
+              Modular.get<AppController>().changeThemeViewModel.changeTheme,
+        );
       },
     );
   }
