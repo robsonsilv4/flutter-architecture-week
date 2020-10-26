@@ -1,21 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'src/app.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Architecture',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        body: Container(),
-      ),
-    );
-  }
+void main() {
+  runApp(App());
 }
