@@ -1,7 +1,8 @@
 import 'package:architecture/src/app_module.dart';
-import 'package:architecture/src/interfaces/http_client_service_interface.dart';
-import 'package:architecture/src/models/api_advisor_model.dart';
-import 'package:architecture/src/viewmodels/api_advisor_viewmodel.dart';
+import 'package:architecture/src/core/interfaces/http_client_service_interface.dart';
+import 'package:architecture/src/modules/home/home_module.dart';
+import 'package:architecture/src/modules/home/models/api_advisor_model.dart';
+import 'package:architecture/src/modules/home/viewmodels/api_advisor_viewmodel.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/flutter_modular_test.dart';
@@ -22,6 +23,7 @@ main() {
     ],
   );
 
+  initModule(HomeModule());
   group('ApiAdvisorViewModel', () {
     test('ApiAdvisorViewModel error', () async {
       when(
