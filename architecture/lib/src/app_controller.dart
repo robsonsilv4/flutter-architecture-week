@@ -1,18 +1,11 @@
 import 'package:flutter/foundation.dart';
 
-import 'interfaces/local_storage_interface.dart';
-import 'services/local_storage_service.dart';
 import 'viewmodels/change_theme_viewmodel.dart';
 
 class AppController {
-  static final AppController instance = AppController._();
+  final ChangeThemeViewModel changeThemeViewModel;
 
-  final ILocalStorage localStorage = LocalStorageService();
-  final changeThemeViewModel = ChangeThemeViewModel(
-    localStorage: LocalStorageService(),
-  );
-
-  AppController._() {
+  AppController(this.changeThemeViewModel) {
     changeThemeViewModel.init();
   }
 
