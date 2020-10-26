@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../models/api_advisor_model.dart';
 import 'home_controller.dart';
+import 'models/api_advisor_model.dart';
 import 'widgets/custom_switch_widget.dart';
 
 class HomePage extends StatefulWidget {

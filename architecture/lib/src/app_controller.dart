@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import 'viewmodels/change_theme_viewmodel.dart';
+import 'core/viewmodels/change_theme_viewmodel.dart';
 
 class AppController {
   final ChangeThemeViewModel changeThemeViewModel;

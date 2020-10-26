@@ -1,4 +1,4 @@
-import '../interfaces/http_client_service_interface.dart';
+import '../../../core/interfaces/http_client_service_interface.dart';
 import '../models/api_advisor_model.dart';
 import 'api_advisor_repository_interface.dart';
 
