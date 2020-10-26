@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../app_controller.dart';
+import '../../../app_controller.dart';
 
 class CustomSwitchWidget extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class _CustomSwitchWidgetState extends State<CustomSwitchWidget> {
   @override
   Widget build(BuildContext context) {
     return Switch(
-      value: AppController.instance.themeSwitch.value,
+      value: AppController.instance.isDark,
       onChanged: (value) {
         AppController.instance.changeTheme(value);
       },
