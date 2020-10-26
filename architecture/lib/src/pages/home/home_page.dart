@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/custom_switch_widget.dart';
+import 'widgets/custom_switch_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override

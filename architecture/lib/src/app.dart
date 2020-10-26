@@ -1,6 +1,6 @@
-import 'package:architecture/src/controllers/app_controller.dart';
 import 'package:flutter/material.dart';
 
+import 'app_controller.dart';
 import 'pages/home/home_page.dart';
 
 class App extends StatelessWidget {
