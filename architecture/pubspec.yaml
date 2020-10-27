@@ -10,9 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.3
-  shared_preferences: ^0.5.12+2
-  dio: ^3.0.10
   flutter_modular: ^2.0.1
+  core_module:
+    path: modules/core_module
+  login_module:
+    path: modules/login_module
+  home_module:
+    path: modules/home_module
 
 dev_dependencies:
   flutter_test:

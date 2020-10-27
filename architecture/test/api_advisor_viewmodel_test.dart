@@ -1,23 +1,30 @@
-import 'package:architecture/src/app_module.dart';
-import 'package:architecture/src/core/interfaces/http_client_service_interface.dart';
-import 'package:architecture/src/modules/home/home_module.dart';
-import 'package:architecture/src/modules/home/models/api_advisor_model.dart';
-import 'package:architecture/src/modules/home/viewmodels/api_advisor_viewmodel.dart';
+import 'package:core_module/core_module.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:home_module/home_module.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HttpClientMock extends Mock implements IHttpClient {}
+
+class AppModuleMock extends ChildModule {
+  @override
+  List<Bind> get binds => [
+        Bind<IHttpClient>((i) => HttpClientMock()),
+      ];
+
+  @override
+  List<ModularRouter> get routers => [];
+}
 
 main() {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences.setMockInitialValues({});
 
   initModule(
-    AppModule(),
+    AppModuleMock(),
     changeBinds: [
       Bind<IHttpClient>((i) => HttpClientMock()),
     ],
