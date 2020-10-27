@@ -6,6 +6,7 @@ import 'app.dart';
 import 'modules/search/domain/usecases/search_by_text.dart';
 import 'modules/search/external/datasources/github_datasource.dart';
 import 'modules/search/infra/repositories/search_repository_impl.dart';
+import 'modules/search/presenter/search/search_page.dart';
 
 class AppModule extends MainModule {
   @override
@@ -20,5 +21,7 @@ class AppModule extends MainModule {
   Widget get bootstrap => App();
 
   @override
-  List<ModularRouter> get routers => [];
+  List<ModularRouter> get routers => [
+        ModularRouter('/', child: (_, __) => SearchPage()),
+      ];
 }
