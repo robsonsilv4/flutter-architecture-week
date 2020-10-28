@@ -70,15 +70,17 @@ class _SearchPageState extends State<SearchPage> {
                   itemBuilder: (_, id) {
                     final item = list[id];
                     return ListTile(
-                      leading: item == null
+                      leading: item.avatarUrl == null
                           ? Container()
                           : CircleAvatar(
                               backgroundImage: NetworkImage(
-                                item.image,
+                                item.avatarUrl,
                               ),
                             ),
-                      title: Text(item.title ?? ''),
-                      subtitle: Text(item.content),
+                      title: Text(item.login ?? ''),
+                      subtitle: Text(
+                        item.id != null ? item.id.toString() : '',
+                      ),
                     );
                   },
                 );
