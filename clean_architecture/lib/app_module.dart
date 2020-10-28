@@ -6,6 +6,7 @@ import 'app.dart';
 import 'modules/search/domain/usecases/search_by_text.dart';
 import 'modules/search/external/datasources/github_datasource.dart';
 import 'modules/search/infra/repositories/search_repository_impl.dart';
+import 'modules/search/presenter/search/search_bloc.dart';
 import 'modules/search/presenter/search/search_page.dart';
 
 class AppModule extends MainModule {
@@ -15,6 +16,7 @@ class AppModule extends MainModule {
         Bind((i) => GitHubDataSource(i())),
         Bind((i) => SearchRepositoryImpl(i())),
         Bind((i) => SearchByTextImpl(i())),
+        Bind((i) => SearchBloc(i())),
       ];
 
   @override
